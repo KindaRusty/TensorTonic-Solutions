@@ -1,7 +1,8 @@
 import numpy as np
 def k_means_centroid_update(points, assignments, k):
-    points = np.array(points, dtype=float)
+    points = np.array(points)
     assignments = np.array(assignments)
+    
     centroids = np.zeros((k, points.shape[1]))
     
     for i in range(k):
