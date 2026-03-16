@@ -14,6 +14,6 @@ def softmax(x):
     #tính tổng của các giá trị mũ e
     sum_exp_x = np.sum(exp_x, axis=-1, keepdims=True)
     #hàm tính softmax
-    #bình thường thì không có max nhưng mà khi code thì thêm vào để tránh số mũ lớn vd: mũ 1000,1001,1002 thì trừ 1002 còn mũ -2,-1,0 tính sẽ nhanh hơn và ko làm crash
+    #bình thường thì không có max nhưng mà khi code thì thêm vào để tránh số mũ lớn vd: mũ các array đầu vào là 1000,1001,1002 thì trừ np.max là 1002 về lại còn mũ -2,-1,0 tính sẽ nhanh hơn và ko làm crash chương trình
     softmax = exp_x/sum_exp_x
     return softmax
