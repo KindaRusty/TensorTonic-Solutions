@@ -1,12 +1,13 @@
 import numpy as np
 
 def expected_value_discrete(x, p):
-    x = np.array(x)
-    p = np.array(p)
-    
-    if x.shape != p.shape:
-        raise ValueError("Size of x and p must be the same")
-    if not np.isclose(np.sum(p), 1.0, atol=1e-6):
-        raise ValueError("Total probabilities must be 1")
-    expected_value = np.sum(x * p)
-    return float(expected_value)
+    """
+    Returns: float expected value
+    """
+    x1 = np.array(x)
+    p1 = np.array(p)
+
+    if not np.isclose(np.sum(p1), 1.0):
+        raise ValueError("The input is not valid")
+    Expected_value = np.sum(x1*p1)
+    return float(Expected_value)
